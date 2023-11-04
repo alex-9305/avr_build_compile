@@ -1,0 +1,171 @@
+gavrasm Gerd's AVR assembler version 5.4 (C)2022 by DG4FAC
+----------------------------------------------------------
+Quelldatei:  startup_attiny_2313.s
+Hexdatei:    startup_attiny_2313.hex
+Eepromdatei: startup_attiny_2313.eep
+Kompiliert:  04.11.2023, 18:34:35
+Durchgang:   2
+     1: .LIST ; activate list file generation
+     2: .INCLUDE "startup_attiny_2313_definitions.S"
+  Datei einfuegen startup_attiny_2313_definitions.S
+     1: .LIST
+     2: ; Overall definitions
+     3: .DEVICE ATTINY2313
+     4: .EQU SRAM_START = 0x0060
+     5: .EQU RAMEND = 0x00DF
+     6: .EQU SPL = 0x003D
+     7: .EQU ARRAY_DATA = 0x00AB
+     8: .EQU LEN_ARRAY = 0x0005
+     9: .DEF rSreg = R15 ; Save/Restore status port
+    10: .DEF rmp = R16 ; Define multipurpose register
+    11: .DEF rmp2 = R17 ;
+    12: 
+    13: ; Vtable addresses
+    14: .EQU RESET_ADDR         =   0x0000;
+    15: .EQU EXT_INT1_ADDR      =   0x0001;
+    16: .EQU EXT_INT0_ADDR      =   0x0002;
+    17: .EQU TIMER1_CAPT_ADDR   =   0x0003;
+    18: .EQU TIMER1_COMPA_ADDR  =   0x0004;
+    19: .EQU TIMER1_OVF_ADDR    =   0x0005;
+    20: .EQU TIMER0_OVF_ADDR    =   0x0006;
+    21: .EQU USART0_RX_ADDR     =   0x0007;
+    22: .EQU USART0_UDRE_ADDR   =   0x0008;
+    23: .EQU USART0_TX_ADDR     =   0x0009;
+    24: .EQU ANALOG_COMP_ADDR   =   0x000A;
+    25: .EQU PCINT_ADDR         =   0x000B;
+    26: .EQU TIMER1_COMPB_ADDR  =   0x000C;
+    27: .EQU TIMER0_COMPA_ADDR  =   0x000D;
+    28: .EQU TIMER0_COMPB_ADDR  =   0x000E;
+    29: .EQU USI_START_ADDR     =   0x000F;
+    30: .EQU USI_OVERFLOW_ADDR  =   0x0010;
+    31: .EQU EE_READY_ADDR      =   0x0011;
+    32: .EQU WDT_OVERFLOW_ADDR  =   0x0012;
+    33: 
+    34: ; RESET_IR:
+    35: ;     LDI rmp, Low(RAMEND) ; Low-Byte of RAMEND
+    36: ;     OUT SPL, rmp ; Init LSB stack pointer
+    37: ;     RJMP Main
+    38: ; EXT_INT1_IR:
+    39: ;     RETI
+    40: ; EXT_INT0_IR:
+    41: ;     RETI
+    42: ; TIMER1_CAPT_IR:
+    43: ;     RETI
+    44: ; TIMER1_COMPA_IR:
+    45: ;     RETI
+    46: ; TIMER1_OVF_IR:
+    47: ;     RETI
+    48: ; TIMER0_OVF_IR:
+    49: ;     RETI
+    50: ; USART0_RX_IR:
+    51: ;     RETI
+    52: ; USART0_UDRE_IR:
+    53: ;     RETI
+    54: ; USART0_TX_IR:
+    55: ;     RETI
+    56: ; ANALOG_COMP_IR:
+    57: ;     RETI
+    58: ; PCINT_IR:
+    59: ;     RETI
+    60: ; TIMER1_COMPB_IR:
+    61: ;     RETI
+    62: ; TIMER0_COMPA_IR:
+    63: ;     RETI
+    64: ; TIMER0_COMPB_IR:
+    65: ;     RETI
+    66: ; USI_START_IR:
+    67: ;     RETI
+    68: ; USI_OVERFLOW_IR:
+    69: ;     RETI
+    70: ; EE_READY_IR:
+    71: ;     RETI
+    72: ; WDT_OVERFLOW_IR:
+    73: ;     RETI
+  Fortsetzung mit Datei startup_attiny_2313.s
+     3: 
+     4: .DSEG
+     5: .ORG SRAM_START
+     6:     test_var_sram: .BYTE 1
+     7:     test_array_sram: .BYTE LEN_ARRAY
+     8: 
+     9: .CSEG
+    10: .ORG 0x0000
+    11: 000000   C012  RJMP RESET_IR
+    12: 000001   C014  RJMP EXT_INT1_IR
+    13: 000002   C014  RJMP EXT_INT0_IR
+    14: 000003   C014  RJMP TIMER1_CAPT_IR
+    15: 000004   C014  RJMP TIMER1_COMPA_IR
+    16: 000005   C014  RJMP TIMER1_OVF_IR
+    17: 000006   C014  RJMP TIMER0_OVF_IR
+    18: 000007   C014  RJMP USART0_RX_IR
+    19: 000008   C014  RJMP USART0_UDRE_IR
+    20: 000009   C014  RJMP USART0_TX_IR
+    21: 00000A   C014  RJMP ANALOG_COMP_IR
+    22: 00000B   C014  RJMP PCINT_IR
+    23: 00000C   C014  RJMP TIMER1_COMPB_IR
+    24: 00000D   C014  RJMP TIMER0_COMPA_IR
+    25: 00000E   C014  RJMP TIMER0_COMPB_IR
+    26: 00000F   C014  RJMP USI_START_IR
+    27: 000010   C014  RJMP USI_OVERFLOW_IR
+    28: 000011   C014  RJMP EE_READY_IR
+    29: 000012   C014  RJMP WDT_OVERFLOW_IR
+    30: 
+    31: RESET_IR:
+    32: 000013   ED0F  LDI rmp, Low(RAMEND) ; Low-Byte of RAMEND
+    33: 000014   BF0D  OUT SPL, rmp ; Init LSB stack pointer
+    34: 000015   C012  RJMP Main
+    35: EXT_INT1_IR:
+    36: 000016   9518  RETI
+    37: EXT_INT0_IR:
+    38: 000017   9518  RETI
+    39: TIMER1_CAPT_IR:
+    40: 000018   9518  RETI
+    41: TIMER1_COMPA_IR:
+    42: 000019   9518  RETI
+    43: TIMER1_OVF_IR:
+    44: 00001A   9518  RETI
+    45: TIMER0_OVF_IR:
+    46: 00001B   9518  RETI
+    47: USART0_RX_IR:
+    48: 00001C   9518  RETI
+    49: USART0_UDRE_IR:
+    50: 00001D   9518  RETI
+    51: USART0_TX_IR:
+    52: 00001E   9518  RETI
+    53: ANALOG_COMP_IR:
+    54: 00001F   9518  RETI
+    55: PCINT_IR:
+    56: 000020   9518  RETI
+    57: TIMER1_COMPB_IR:
+    58: 000021   9518  RETI
+    59: TIMER0_COMPA_IR:
+    60: 000022   9518  RETI
+    61: TIMER0_COMPB_IR:
+    62: 000023   9518  RETI
+    63: USI_START_IR:
+    64: 000024   9518  RETI
+    65: USI_OVERFLOW_IR:
+    66: 000025   9518  RETI
+    67: EE_READY_IR:
+    68: 000026   9518  RETI
+    69: WDT_OVERFLOW_IR:
+    70: 000027   9518  RETI
+    71: 
+    72: ; Fill_Array:
+    73: ;     STS (test_array_sram + rmp), rmp2
+    74: ;     INC rmp
+    75: ;     CPI rmp, (LEN_ARRAY - 0x0001)
+    76: ;     BRNE Fill_Array ; if called after CPI: branches only when CPI not equal
+    77: 
+    78: Main:
+    79: 000028   CFF0  RJMP TIMER1_COMPA_IR
+    80: 000029   CFFE  RJMP Main
+ -> Warnung 001: 24 Symbol(e) definiert, aber nicht benutzt!
+
+Programm        :       42 words.
+Konstanten      :        0 words.
+Programm Gesamt :       42 words.
+Eepromnutzung   :        0 bytes.
+Datensegment    :        6 bytes.
+Kompilation fertig, keine Fehler.
+Kompilation beendet 04.11.2023, 18:34:35

@@ -1,0 +1,79 @@
+.LIST ; activate list file generation
+.INCLUDE "startup_attiny_2313_definitions.S"
+
+.DSEG
+.ORG SRAM_START
+    test_var_sram: .BYTE 1
+    test_array_sram: .BYTE LEN_ARRAY
+
+.CSEG
+.ORG 0x0000
+    RJMP RESET_IR
+    RJMP EXT_INT1_IR
+    RJMP EXT_INT0_IR
+    RJMP TIMER1_CAPT_IR
+    RJMP TIMER1_COMPA_IR
+    RJMP TIMER1_OVF_IR
+    RJMP TIMER0_OVF_IR
+    RJMP USART0_RX_IR
+    RJMP USART0_UDRE_IR
+    RJMP USART0_TX_IR
+    RJMP ANALOG_COMP_IR
+    RJMP PCINT_IR
+    RJMP TIMER1_COMPB_IR
+    RJMP TIMER0_COMPA_IR
+    RJMP TIMER0_COMPB_IR
+    RJMP USI_START_IR
+    RJMP USI_OVERFLOW_IR
+    RJMP EE_READY_IR
+    RJMP WDT_OVERFLOW_IR
+
+RESET_IR:
+    LDI rmp, Low(RAMEND) ; Low-Byte of RAMEND
+    OUT SPL, rmp ; Init LSB stack pointer
+    RJMP Main
+EXT_INT1_IR:
+    RETI
+EXT_INT0_IR:
+    RETI
+TIMER1_CAPT_IR:
+    RETI
+TIMER1_COMPA_IR:
+    RETI
+TIMER1_OVF_IR:
+    RETI
+TIMER0_OVF_IR:
+    RETI
+USART0_RX_IR:
+    RETI
+USART0_UDRE_IR:
+    RETI
+USART0_TX_IR:
+    RETI
+ANALOG_COMP_IR:
+    RETI
+PCINT_IR:
+    RETI
+TIMER1_COMPB_IR:
+    RETI
+TIMER0_COMPA_IR:
+    RETI
+TIMER0_COMPB_IR:
+    RETI
+USI_START_IR:
+    RETI
+USI_OVERFLOW_IR:
+    RETI
+EE_READY_IR:
+    RETI
+WDT_OVERFLOW_IR:
+    RETI
+
+; Fill_Array:
+;     STS (test_array_sram + rmp), rmp2
+;     INC rmp
+;     CPI rmp, (LEN_ARRAY - 0x0001)
+;     BRNE Fill_Array ; if called after CPI: branches only when CPI not equal
+
+Main:
+    RJMP Main

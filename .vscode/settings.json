@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "alloca.h": "c",
+        "signal.h": "c",
+        "io2313.h": "c",
+        "io.h": "c"
+    }
+}

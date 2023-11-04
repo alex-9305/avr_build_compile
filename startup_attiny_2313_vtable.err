@@ -1,0 +1,84 @@
+gavrasm Gerd's AVR assembler version 5.4 (C)2022 by DG4FAC
+----------------------------------------------------------
+Quelldatei:  startup_attiny_2313_vtable.s
+Hexdatei:    startup_attiny_2313_vtable.hex
+Eepromdatei: startup_attiny_2313_vtable.eep
+Kompiliert:  03.11.2023, 16:10:27
+Durchgang:   2
+Fehler ==>     RJMP RESET;
+[startup_attiny_2313_vtable.s,25] 007: Undefinierte Konstante, Variable, Marke oder Device (RESET)!
+Fehler ==>     RJMP RESET;
+[startup_attiny_2313_vtable.s,25] 007: Undefinierte Konstante, Variable, Marke oder Device (RESET)!
+Fehler ==>     RJMP EXT_INT0;
+[startup_attiny_2313_vtable.s,26] 007: Undefinierte Konstante, Variable, Marke oder Device (EXT_INT0)!
+Fehler ==>     RJMP EXT_INT0;
+[startup_attiny_2313_vtable.s,26] 007: Undefinierte Konstante, Variable, Marke oder Device (EXT_INT0)!
+Fehler ==>     RJMP EXT_INT1;
+[startup_attiny_2313_vtable.s,27] 007: Undefinierte Konstante, Variable, Marke oder Device (EXT_INT1)!
+Fehler ==>     RJMP EXT_INT1;
+[startup_attiny_2313_vtable.s,27] 007: Undefinierte Konstante, Variable, Marke oder Device (EXT_INT1)!
+Fehler ==>     RJMP TIMER1_CAPT;
+[startup_attiny_2313_vtable.s,28] 007: Undefinierte Konstante, Variable, Marke oder Device (TIMER1_CAPT)!
+Fehler ==>     RJMP TIMER1_CAPT;
+[startup_attiny_2313_vtable.s,28] 007: Undefinierte Konstante, Variable, Marke oder Device (TIMER1_CAPT)!
+Fehler ==>     RJMP TIMER1_COMPA;
+[startup_attiny_2313_vtable.s,29] 007: Undefinierte Konstante, Variable, Marke oder Device (TIMER1_COMPA)!
+Fehler ==>     RJMP TIMER1_COMPA;
+[startup_attiny_2313_vtable.s,29] 007: Undefinierte Konstante, Variable, Marke oder Device (TIMER1_COMPA)!
+Fehler ==>     RJMP TIMER1_OVF;
+[startup_attiny_2313_vtable.s,30] 007: Undefinierte Konstante, Variable, Marke oder Device (TIMER1_OVF)!
+Fehler ==>     RJMP TIMER1_OVF;
+[startup_attiny_2313_vtable.s,30] 007: Undefinierte Konstante, Variable, Marke oder Device (TIMER1_OVF)!
+Fehler ==>     RJMP TIMER0_OVF;
+[startup_attiny_2313_vtable.s,31] 007: Undefinierte Konstante, Variable, Marke oder Device (TIMER0_OVF)!
+Fehler ==>     RJMP TIMER0_OVF;
+[startup_attiny_2313_vtable.s,31] 007: Undefinierte Konstante, Variable, Marke oder Device (TIMER0_OVF)!
+Fehler ==>     RJMP USART0_RX;
+[startup_attiny_2313_vtable.s,32] 007: Undefinierte Konstante, Variable, Marke oder Device (USART0_RX)!
+Fehler ==>     RJMP USART0_RX;
+[startup_attiny_2313_vtable.s,32] 007: Undefinierte Konstante, Variable, Marke oder Device (USART0_RX)!
+Fehler ==>     RJMP USART0_UDRE;
+[startup_attiny_2313_vtable.s,33] 007: Undefinierte Konstante, Variable, Marke oder Device (USART0_UDRE)!
+Fehler ==>     RJMP USART0_UDRE;
+[startup_attiny_2313_vtable.s,33] 007: Undefinierte Konstante, Variable, Marke oder Device (USART0_UDRE)!
+Fehler ==>     RJMP USART0_TX;
+[startup_attiny_2313_vtable.s,34] 007: Undefinierte Konstante, Variable, Marke oder Device (USART0_TX)!
+Fehler ==>     RJMP USART0_TX;
+[startup_attiny_2313_vtable.s,34] 007: Undefinierte Konstante, Variable, Marke oder Device (USART0_TX)!
+Fehler ==>     RJMP ANALOG_COMP;
+[startup_attiny_2313_vtable.s,35] 007: Undefinierte Konstante, Variable, Marke oder Device (ANALOG_COMP)!
+Fehler ==>     RJMP ANALOG_COMP;
+[startup_attiny_2313_vtable.s,35] 007: Undefinierte Konstante, Variable, Marke oder Device (ANALOG_COMP)!
+Fehler ==>     RJMP PCINT;
+[startup_attiny_2313_vtable.s,36] 007: Undefinierte Konstante, Variable, Marke oder Device (PCINT)!
+Fehler ==>     RJMP PCINT;
+[startup_attiny_2313_vtable.s,36] 007: Undefinierte Konstante, Variable, Marke oder Device (PCINT)!
+Fehler ==>     RJMP TIMER1_COMPB;
+[startup_attiny_2313_vtable.s,37] 007: Undefinierte Konstante, Variable, Marke oder Device (TIMER1_COMPB)!
+Fehler ==>     RJMP TIMER1_COMPB;
+[startup_attiny_2313_vtable.s,37] 007: Undefinierte Konstante, Variable, Marke oder Device (TIMER1_COMPB)!
+Fehler ==>     RJMP TIMER0_COMPA;
+[startup_attiny_2313_vtable.s,38] 007: Undefinierte Konstante, Variable, Marke oder Device (TIMER0_COMPA)!
+Fehler ==>     RJMP TIMER0_COMPA;
+[startup_attiny_2313_vtable.s,38] 007: Undefinierte Konstante, Variable, Marke oder Device (TIMER0_COMPA)!
+Fehler ==>     RJMP TIMER0_COMPB;
+[startup_attiny_2313_vtable.s,39] 007: Undefinierte Konstante, Variable, Marke oder Device (TIMER0_COMPB)!
+Fehler ==>     RJMP TIMER0_COMPB;
+[startup_attiny_2313_vtable.s,39] 007: Undefinierte Konstante, Variable, Marke oder Device (TIMER0_COMPB)!
+Fehler ==>     RJMP USI_START;
+[startup_attiny_2313_vtable.s,40] 007: Undefinierte Konstante, Variable, Marke oder Device (USI_START)!
+Fehler ==>     RJMP USI_START;
+[startup_attiny_2313_vtable.s,40] 007: Undefinierte Konstante, Variable, Marke oder Device (USI_START)!
+Fehler ==>     RJMP USI_OVERFLOW;
+[startup_attiny_2313_vtable.s,41] 007: Undefinierte Konstante, Variable, Marke oder Device (USI_OVERFLOW)!
+Fehler ==>     RJMP USI_OVERFLOW;
+[startup_attiny_2313_vtable.s,41] 007: Undefinierte Konstante, Variable, Marke oder Device (USI_OVERFLOW)!
+Fehler ==>     RJMP EE_READY;
+[startup_attiny_2313_vtable.s,42] 007: Undefinierte Konstante, Variable, Marke oder Device (EE_READY)!
+Fehler ==>     RJMP EE_READY;
+[startup_attiny_2313_vtable.s,42] 007: Undefinierte Konstante, Variable, Marke oder Device (EE_READY)!
+Fehler ==>     RJMP WDT_OVERFLOW;
+[startup_attiny_2313_vtable.s,43] 007: Undefinierte Konstante, Variable, Marke oder Device (WDT_OVERFLOW)!
+Fehler ==>     RJMP WDT_OVERFLOW;
+[startup_attiny_2313_vtable.s,43] 007: Undefinierte Konstante, Variable, Marke oder Device (WDT_OVERFLOW)!
+Kompilation abgebrochen, 38 Fehler!
